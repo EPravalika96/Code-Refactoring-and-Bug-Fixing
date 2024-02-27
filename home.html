@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .note-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .note {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 0 auto 10px auto; /* Center horizontally */
+            width: 300px; /* Set the desired width */
+        }
+        .center-button {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h2> NOTE TAKING APPLICATION</h2>
+        <div class="note-container">
+            <form action="/" method="post">
+                <textarea name="note" placeholder="Enter a note" class="note"></textarea>
+                <div class="center-button">
+                    <button type="submit">Add Note</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="center">
+        {% for note in notes %}
+            <div class="note">{{ note }}</div>
+        {% endfor %}
+    </div>
+</body>
+</html>
